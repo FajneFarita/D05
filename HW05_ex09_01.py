@@ -5,13 +5,23 @@
 # words with more than 20 characters (not counting whitespace).
 ##############################################################################
 # Imports
+import os
+
 
 # Body
+def print_long_words(filename):
+    with open(filename, 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            words = line.split()
+            for word in words:
+                if len(word) > 20:
+                    print(word)
 
 
 ##############################################################################
 def main():
-    pass  # Call your functions here.
+    print_long_words('words.txt')
 
 if __name__ == '__main__':
     main()
